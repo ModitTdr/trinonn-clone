@@ -11,7 +11,7 @@ const SocialLinks = ({ socialLinks }: { socialLinks: { name: string, url: string
             key={name}
             href={url}
             className='
-              w-full max-w-160
+              w-full max-w-180 lg:max-w-240
               h-24
               border-b
               flex items-center justify-between gap-2
