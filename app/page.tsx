@@ -40,7 +40,7 @@ export default function Home() {
         </div>
       </section>
       <Testimonials testimonials={testimonials} />
-      <div className="flex flex-col -space-y-12">
+      <div className="flex flex-col -space-y-5 lg:-space-y-8">
         <Marquee text="wild ideas! — wild ideas! —" />
         <Marquee text="let's dive in! — let's dive in! —" speed={12} />
       </div>
