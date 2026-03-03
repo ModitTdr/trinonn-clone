@@ -5,7 +5,7 @@ const Works = () => {
   return (
     <section className="px-[6vw] lg:px-[9vw] py-20">
       <div className="space-y-4 w-full">
-        <h2 className="font-dirtyline text-[4.6rem] lg:text-[15vw] leading-[3.5rem] lg:leading-[11.8vw] tracking-tight">
+        <h2 className="font-dirtyline text-[4.6rem] lg:text-[15vw] leading-14 lg:leading-[11.8vw] tracking-tight">
           recent<br />work
         </h2>
         <div className="flex justify-between items-center">

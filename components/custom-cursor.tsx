@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const trailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -39,7 +38,7 @@ const CustomCursor = () => {
 
     const onPointerOver = (e: PointerEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, [role='button'], input, textarea, select")) {
+      if (target.closest("a, button, [role='button'], input, textarea, select, video, img")) {
         gsap.to(cursor, {
           scale: 5,
           duration: 0.3,
@@ -47,13 +46,28 @@ const CustomCursor = () => {
           ease: "power2.out"
         });
       }
+      if (target.closest(".footer-image")) {
+        gsap.to(cursor, {
+          scale: 2,
+          duration: 0.3,
+          ease: "sine.inOut",
+          backgroundColor: "rgba(255,255,255,0.6)",
+          boxShadow: "0 0 60px 20px rgba(255,255,255,0.6)",
+          mixBlendMode: "color-dodge",
+          width: 0.01,
+          height: 0.01,
+
+        });
+
+      }
     };
 
     const onPointerOut = (e: PointerEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a, button, [role='button'], input, textarea, select")) {
+      if (target.closest("a, button, [role='button'], input, textarea, select, video, img")) {
         gsap.to(cursor, { scale: 1, duration: 0.3, boxShadow: "0 0 0px 0px transparent", ease: "power2.out" });
       }
+
     };
 
     window.addEventListener("mousemove", onMouseMove);
@@ -72,13 +86,10 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <>
-      {/* Small inner dot */}
-      <div
-        ref={cursorRef}
-        className="fixed top-0 left-0 w-3 h-3 rounded-full bg-primary pointer-events-none z-99 mix-blend-difference opacity-0 hidden lg:block"
-      />
-    </>
+    <div
+      ref={cursorRef}
+      className="fixed top-0 left-0 w-3 h-3 rounded-full bg-primary pointer-events-none z-99 mix-blend-difference opacity-0 hidden lg:block"
+    />
   );
 };
 

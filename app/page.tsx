@@ -1,5 +1,6 @@
 import AchievementCards from "@/components/landing-page/achievement-cards";
 import Category from "@/components/landing-page/category";
+import Footer from "@/components/landing-page/footer";
 import HeroSection from "@/components/landing-page/hero-section";
 import Marquee from "@/components/landing-page/marquee";
 import SocialLinks from "@/components/landing-page/social-links";
@@ -11,6 +12,7 @@ import { achivements } from "@/data/achievments";
 import { categories } from "@/data/category";
 import { socialLinks } from "@/data/sociallinks";
 import { testimonials } from "@/data/testimonials";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -22,6 +24,8 @@ export default function Home() {
       <Works />
       <Category categories={categories} />
       <AchievementCards achivements={achivements} />
+
+      {/* testimonial section */}
       <section className="px-[6vw] lg:px-[9vw] pt-20">
         <div className="flex justify-between items-end flex-wrap gap-y-4 w-full">
           <h2 className="font-dirtyline text-[4.6rem] lg:text-[14vw] leading-14 lg:leading-[11vw] tracking-tight">
@@ -40,10 +44,14 @@ export default function Home() {
         </div>
       </section>
       <Testimonials testimonials={testimonials} />
+
+      {/* infinite scroller */}
       <div className="flex flex-col -space-y-5 lg:-space-y-8">
         <Marquee text="wild ideas! — wild ideas! —" />
         <Marquee text="let's dive in! — let's dive in! —" speed={12} />
       </div>
+
+      {/* social links */}
       <section className="px-[6vw] lg:px-[9vw] pt-20">
         <h2 className="font-dirtyline text-[4.6rem] lg:text-[11vw] leading-14 lg:leading-[8vw] tracking-tight text-center">
           join our <br />
@@ -54,6 +62,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* cta section */}
       <section className="px-[6vw] lg:px-[9vw] py-20">
         <div className="flex justify-between items-end flex-wrap gap-y-8 w-full">
           <h2 className="font-dirtyline text-[4.6rem] lg:text-[14vw] leading-14 lg:leading-[11vw] tracking-tight">
@@ -65,6 +74,14 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <Footer />
+      <Image
+        src='images/footer-logo.svg'
+        alt='footer-logo'
+        width={1440}
+        height={305}
+        className='w-full h-auto footer-image opacity-40'
+      />
     </div>
   );
 }
