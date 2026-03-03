@@ -35,10 +35,10 @@ export default function AwardsCard({ achivements }: { achivements: props[] }) {
           opacity: 1,
           rotation: 0,
           x: 0,
+          duration: 1.2,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            ease: "power3.out",
             start: "top 90%",
             end: "bottom 100%",
             scrub: 0.2,
@@ -54,7 +54,9 @@ export default function AwardsCard({ achivements }: { achivements: props[] }) {
         achivements.map(({ name, color, count }, index) => (
           <div
             key={color}
-            ref={(el) => cardsRef.current[index] = el}
+            ref={(el) => {
+              cardsRef.current[index] = el;
+            }}
             className={`
               w-full lg:w-[38vw]
               rounded-[3vw]
