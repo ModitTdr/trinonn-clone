@@ -67,7 +67,18 @@ const CustomCursor = () => {
       if (target.closest("a, button, [role='button'], input, textarea, select, video, img")) {
         gsap.to(cursor, { scale: 1, duration: 0.3, boxShadow: "0 0 0px 0px transparent", ease: "power2.out" });
       }
-
+      if (target.closest(".footer-image")) {
+        gsap.to(cursor, {
+          scale: 1,
+          duration: 0.3,
+          boxShadow: "0 0 0px 0px transparent",
+          backgroundColor: "var(--primary)",
+          mixBlendMode: "difference",
+          width: 12,
+          height: 12,
+          ease: "power2.out",
+        });
+      }
     };
 
     window.addEventListener("mousemove", onMouseMove);
