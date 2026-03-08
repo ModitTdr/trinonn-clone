@@ -1,7 +1,9 @@
 "use client"
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +23,7 @@ const colorVariants: Record<string, string> = {
 export default function AwardsCard({ achivements }: { achivements: props[] }) {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
+  useGSAP(() => {
     cardsRef.current.forEach((card, index) => {
       if (!card) return;
 
@@ -41,7 +43,7 @@ export default function AwardsCard({ achivements }: { achivements: props[] }) {
             trigger: card,
             start: "top 90%",
             end: "bottom 100%",
-            scrub: 0.2,
+            scrub: 1.5,
           }
         }
       );

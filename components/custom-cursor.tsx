@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
     gsap.set([cursor], { xPercent: -50, yPercent: -60, x: -100, y: -100 });
@@ -61,7 +62,6 @@ const CustomCursor = () => {
 
       }
     };
-
     const onPointerOut = (e: PointerEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [role='button'], input, textarea, select, video, img")) {

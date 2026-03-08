@@ -9,6 +9,13 @@ import { socialLinks } from "@/data/sociallinks";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuItems = [
+    { title: "work", href: "/work" },
+    { title: "about", href: "/about" },
+    { title: "services", href: "/services" },
+    { title: "team", href: "/team" },
+    { title: "contact", href: "/contact" },
+  ];
 
   return (
     <>
@@ -40,22 +47,22 @@ const Navbar = () => {
         </nav>
       </header>
 
-      {/* Fullscreen Overlay */}
       <div
-        className={`fixed inset-0 h-dvh w-full bg-background z-90 transition-transform duration-500 ease-in-out flex flex-col overflow-y-auto ${isOpen ? 'translate-y-0' : '-translate-y-full'} no-scrollbar`}
+        className={`fixed top-0 left-0 h-dvh w-full bg-background z-90 transition-all duration-1000 ease-in-out flex flex-col overflow-y-auto 
+          ${isOpen ? 'translate-y opacity-full bg-background rounded-none' : 'translate-y-full opacity-40 bg-neutral-700 rounded-t-[30rem]'} no-scrollbar`}
       >
-        <div className="w-full flex-1 px-[6vw] lg:px-[9vw] mx-auto flex flex-col pt-[calc(9.6vw+4rem)] lg:pt-[calc(7.2vw+4rem)] pb-12 lg:pb-[6vw]">
+        <div className="w-full flex-1 px-[6vw] lg:px-[9vw] mx-auto flex flex-col pt-[20vw] lg:pt-[9vw] pb-12 lg:pb-[6vw]">
           <div className="flex-1 flex flex-col lg:flex-row justify-between items-start lg:items-end">
-            {/* Left huge links */}
+            {/* Left  */}
             <div className="flex flex-col gap-0 font-dirtyline text-[14vw] lg:text-[10.5vw] leading-[0.85] tracking-tight">
-              {['work', 'about', 'services', 'team', 'contact'].map((item) => (
-                <Link key={item} href="#" onClick={() => setIsOpen(false)} className="hover:text-primary transition-colors duration-300 w-fit">
-                  {item}
+              {menuItems.map((item) => (
+                <Link key={item.title} href={item.href} onClick={() => setIsOpen(false)} className="hover:text-primary transition-colors duration-300 w-fit">
+                  {item.title}
                 </Link>
               ))}
             </div>
 
-            {/* Right contact text */}
+            {/* Right */}
             <div className="flex flex-col gap-6 mt-16 lg:mt-0 items-start lg:items-end text-left lg:text-right font-dmmono text-sm lg:text-[1.05rem]">
               <div className="flex flex-col items-start lg:items-end gap-1">
                 <a href="mailto:hello@trionn.com" className="hover:text-primary transition-colors">
