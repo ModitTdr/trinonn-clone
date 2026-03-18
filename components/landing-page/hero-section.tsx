@@ -19,7 +19,7 @@ const HeroSection = () => {
       opacity: 0,
       y: 130,
       skewX: -80,
-      duration: 1.55``,
+      duration: 1.55,
       stagger: 0.035,
       filter: "blur(12px)",
       ease: "power2.out"
