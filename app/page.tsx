@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <Works />
       <Category categories={categories} />
       <AchievementCards achivements={achivements} />

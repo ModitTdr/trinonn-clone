@@ -11,12 +11,12 @@ const SocialLinks = ({ socialLinks }: { socialLinks: { name: string, url: string
             key={name}
             href={url}
             className='
-              w-full max-w-180 lg:max-w-240
+              w-[70vw] lg:w-[60vw]
               h-24
               border-b
               flex items-center justify-between gap-2
               transition-all duration-400 ease-in-out
-              hover:max-w-240
+              hover:w-[75vw] lg:hover:w-[65vw]
               group/item
               opacity-100
               group-hover/links:opacity-50
