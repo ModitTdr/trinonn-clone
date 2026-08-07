@@ -28,14 +28,14 @@ const Navbar = () => {
               className="w-full h-auto object-contain"
             />
           </div>
-          <ul className="flex gap-1 items-center">
-            <Button variant="icon" size={"icon-sm"}>
-              <Sun />
-            </Button>
-            <Button variant="icon" size={"icon-sm"}>
-              <AudioLines />
-            </Button>
-          </ul>
+          {/* <ul className="flex gap-1 items-center"> */}
+          {/*   <Button variant="icon" size={"icon-sm"}> */}
+          {/*     <Sun /> */}
+          {/*   </Button> */}
+          {/*   <Button variant="icon" size={"icon-sm"}> */}
+          {/*     <AudioLines /> */}
+          {/*   </Button> */}
+          {/* </ul> */}
           <div className="flex items-center gap-3 lg:gap-4 cursor-pointer group" onClick={() => setIsOpen(!isOpen)}>
             <p className="tracking-[-0.5px] font-dirtyline mt-1 text-[0.9rem] group-hover:text-primary transition-colors">
               {isOpen ? "close" : "menu"}
