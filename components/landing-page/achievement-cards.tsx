@@ -37,14 +37,14 @@ export default function AwardsCard({ achivements }: { achivements: props[] }) {
           opacity: 1,
           rotation: 0,
           x: 0,
-          duration: 1.2,
+          duration: 1.1,
           ease: "power3.out",
           scrollTrigger: {
             trigger: card,
-            start: "top 90%",
-            end: "bottom 100%",
+            start: "top 70%",
+            end: "bottom 80%",
             scrub: 1.5,
-          }
+          },
         }
       );
     });
